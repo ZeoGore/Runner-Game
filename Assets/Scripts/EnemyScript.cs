@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class EnemyScript : MonoBehaviour
 {
+    public ArrayList Players;
+
     public PlayerMoveScript PlayerMoveScript;
     // Start is called before the first frame update
     void Start()
@@ -21,7 +23,8 @@ public class EnemyScript : MonoBehaviour
 
         if (collision.transform.tag=="Player")
         {
-            PlayerMoveScript.enabled = false;
+         PlayerMoveScript.enabled = false;
+         PlayerMoveScript.enabled = false;
             Invoke("ResetGame", 2f);
 
         }

@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMoveScript : MonoBehaviour
 {
-    public float forwardSpeed = 1000;
+    public float forwardSpeed = 600;
     Rigidbody rb;
-    public float sideSpeed = 500;
+    public float sideSpeed = 350;
     private Vector3 position;
     private float width;
     private float height;
+    public ScoreTextScript CoinNum;
 
     void Awake()
     {
@@ -29,6 +31,8 @@ public class PlayerMoveScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
         {
             // Handle screen touches.
             if (Input.touchCount > 0)
@@ -63,6 +67,7 @@ public class PlayerMoveScript : MonoBehaviour
         {
             rb.AddForce(sideSpeed * Time.deltaTime, 0, 0);
         }
+       
 
     }
 }
